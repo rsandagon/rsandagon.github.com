@@ -1,0 +1,103 @@
+/**
+http://www.brtconsulting.ph/
+**/
+body{
+	font-family: Roboto, sans-serif;
+	font-weight: 50;
+	font-size: 12px;
+	color: #343333;
+}
+
+.container{
+	display: -webkit-flex;
+	display: flex;
+	-webkit-flex-flow: row wrap;
+	flex-flow: row wrap;
+	margin: 0;
+	padding: 0;
+	width: 100%;
+}
+
+.container div{
+	box-sizing: border-box;
+	min-height: 50px;
+	min-width: 150px;
+}
+
+.course > h2, .course > h4{
+	color: #4f8ac6;
+}
+
+#headline, #schedule, #contacts, .info, .course, .courses{
+	width: 100%;
+	padding: 1%;
+}
+
+#schedule{
+	color: white;
+	border-style: solid;
+	border-width: 1%;
+	border-color: white;
+	background-color: #4f81bc;
+	box-shadow: 2px 2px 2px #888888;
+	max-height: 800px;
+}
+
+#headline{
+	padding-bottom: 50%;
+	background-color: white;
+	background-image: url(../images/header.jpg);
+	background-size: cover;
+}
+
+#mobileContact{
+	border-style: solid;
+	border-width: 0.5%;
+	border-radius: 10px;
+	border-color: white;
+	background-color: #c0504e;
+	margin-top:1%;
+	margin-bottom:1%;
+}
+
+/* min-width 620px */
+@media (min-width: 620px){
+	body{
+        font-size: 14px;
+    }
+
+	#schedule{
+		width: 25%;
+	}
+
+	.courses{
+		width: 75%;
+	}
+
+	.info{
+		width: 50%;
+	}
+}
+
+/* min-width 800px */
+@media (min-width: 800px){
+	body{
+        font-size: 16px;
+    }
+
+	.container{
+		width: 800px;
+		margin-left: auto;
+		margin-right: auto;
+	}
+}
+
+/* footer */
+footer {
+	font-family: Roboto, sans-serif;
+	font-weight: 200;
+	text-align: center;
+	background-color: #17375e;
+	margin-top: 5%;
+	color: white;
+}
