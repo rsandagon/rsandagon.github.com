@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Instagram Test</title>
+  <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap.min.css">
+</head>
+
+<body>
+  <div class="pics">
+    <ul class="row show-grid" ng-init="total = 20" ng-app="InstagramApp" ng-controller="InstagramAppController">
+      <li ng-repeat="p in pics" class="col-md-3">
+        <a colorbox="colorbox" rel="colorbox" href="{{p.images.standard_resolution.url}}" target="_blank">
+          <img class="img-thumbnail" ng-src="{{p.images.low_resolution.url}}" />
+        </a>
+      </li>
+    </ul>
+  </div>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.0.1/angular.min.js"></script>
+  <script>
+  var app = angular.module("InstagramApp", []);
+  app.factory("instagram", ["$http",
+    function($http) {
+      return {
+        fetchPopular: function(callback) {
+          var endPoint = "https://api.instagram.com/v1/users/rsandagon/media/populat/?client_id=44f68e00bdbe4c088f7a240d0bef8678&callback=JSON_CALLBACK";
+
+          $http.jsonp(endPoint).success(function(response) {
+            callback(response.data);
+          });
+        }
+      }
+
+    }
+  ]);
+  app.controller("InstagramAppController", ["$scope", "instagram",
+    function($scope, instagram) {
+      $scope.$watch('total', function() {});
+      $scope.pics = [];
+
+      instagram.fetchPopular(function(data) {
+        console.log($scope.total);
+        $scope.pics = data.splice(0, $scope.total);
+      });
+    }
+  ]);
+  </script>
+</body>
+
+</html>
