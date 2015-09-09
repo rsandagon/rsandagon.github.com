@@ -12,12 +12,14 @@ html, body {
 
 #main {
     width: 80%;
-    padding-bottom: 65%;
+    padding-bottom: 60%;
     position:relative; /*it can be fixed too*/
     left: 50%;
     top: 50%;
     -webkit-transform: translate(-50%, -50%);
     transform: translate(-50%, -50%);
+
+    max-width: 1240px;
 }
 
 .renderer {
