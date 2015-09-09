@@ -1,0 +1,27 @@
+/**
+ * Created by rsandagon on 3/27/15.
+ */
+
+html, body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #000000;
+}
+
+#main {
+    width: 80%;
+    padding-bottom: 65%;
+    position:relative; /*it can be fixed too*/
+    left: 50%;
+    top: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+}
+
+.renderer {
+    position: absolute;
+    height:100%;
+    width:100%;
+}
